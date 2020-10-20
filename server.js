@@ -39,6 +39,11 @@ app.get("/get-details",async(req,res)=>{
     client.close();
 })
 
+app.get("/",async(req,res)=>{
+    res.send("Hello World")
+})
+
+
 app.get("/get-details/:emailid",async (req,res)=>{
     var client=await mongoclient.connect(url);
     var db= await client.db("assignment");
